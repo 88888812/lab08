@@ -37,7 +37,7 @@ script:
 - cmake --build _build
 - cmake --build _build --target hello_world
 - ./_build/hello_world
-- echo "Hello world application testing is done"
+- echo "Hello world application "
 - cd ..
 - cd solver_application 
 - cmake -H. -B_build
@@ -59,10 +59,10 @@ file:
 - solver_application/_build/solver-source-files.zip
 - solver_application/_build/solver-source-files.tar.gz
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 'solver_application/_build/solver.dmg' ;fi
-# - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.rpm' ;fi
+ - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.rpm' ;fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.deb' ;fi
 
-skip_cleanup: true
+skip_cleanup: 'true'
 # деплоить только помеченные тэгом коммиты
 on:
 tags: true
