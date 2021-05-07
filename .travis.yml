@@ -47,7 +47,7 @@ script:
 - cd _build
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cpack -G DragNDrop ;fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cpack -G DEB ;fi
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then cpack -G RPM ;fi
+
 deploy:
 provider: releases
 
