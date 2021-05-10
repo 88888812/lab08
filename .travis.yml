@@ -61,6 +61,11 @@ file:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 'solver_application/_build/solver.dmg' ;fi
  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.rpm' ;fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.deb' ;fi
+services:
+        - docker>
+
+script:
+        - docker build -t logger .
 
 skip_cleanup: 'true'
 # деплоить только помеченные тэгом коммиты
